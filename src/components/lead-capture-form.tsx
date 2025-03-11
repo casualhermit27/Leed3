@@ -11,13 +11,14 @@ export default function LeadCaptureForm() {
     email: "",
     company: "",
     companySize: "",
+    marketingGoals: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -41,6 +42,7 @@ export default function LeadCaptureForm() {
         email: "",
         company: "",
         companySize: "",
+        marketingGoals: "",
       });
     }, 1500);
   };
@@ -66,14 +68,13 @@ export default function LeadCaptureForm() {
         </div>
         <h3 className="text-2xl font-bold text-gray-800 mb-4">Thank You!</h3>
         <p className="text-gray-600 mb-6">
-          Your free trial has been activated. Check your email for login details
-          and next steps.
+          We've received your information. A marketing strategist will contact you within 24 hours to discuss your campaign needs.
         </p>
         <Link
-          href="/sign-in"
+          href="/"
           className="inline-flex items-center px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
         >
-          Go to Dashboard
+          Return to Home
           <ArrowUpRight className="ml-2 w-4 h-4" />
         </Link>
       </div>
@@ -83,11 +84,10 @@ export default function LeadCaptureForm() {
   return (
     <div className="bg-white p-8 rounded-xl shadow-lg">
       <h3 className="text-2xl font-bold text-gray-800 mb-4">
-        Get Started Today
+        Start Your Marketing Campaign
       </h3>
       <p className="text-gray-600 mb-6">
-        Fill out the form below to start your free trial. No credit card
-        required.
+        Fill out the form below to schedule a free consultation with our marketing experts.
       </p>
 
       <form className="space-y-4" onSubmit={handleSubmit}>
@@ -156,6 +156,16 @@ export default function LeadCaptureForm() {
           </select>
         </div>
         <div>
+          <textarea
+            name="marketingGoals"
+            value={formData.marketingGoals}
+            onChange={handleChange}
+            placeholder="Tell us about your marketing goals"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            rows={4}
+          />
+        </div>
+        <div>
           <button
             type="submit"
             className="w-full py-3 px-6 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
@@ -187,14 +197,14 @@ export default function LeadCaptureForm() {
               </>
             ) : (
               <>
-                Start Free Trial
+                Request Consultation
                 <ArrowUpRight className="ml-2 w-4 h-4" />
               </>
             )}
           </button>
         </div>
         <p className="text-xs text-gray-500 text-center">
-          By signing up, you agree to our{" "}
+          By submitting this form, you agree to our{" "}
           <Link href="#" className="underline hover:text-blue-600">
             Terms of Service
           </Link>{" "}

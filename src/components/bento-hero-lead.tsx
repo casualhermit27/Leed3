@@ -25,52 +25,50 @@ export default function BentoHeroLead() {
           >
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4 mr-2" />
-              <span>AI-Powered Design Generation</span>
+              <span>Strategic Marketing Solutions</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
-              Transform Your Ideas into
+              Turn Ideas into
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 animate-gradient-x">
                 {" "}
-                Beautiful Designs
+                Powerful Campaigns
               </span>
             </h1>
 
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-              Submit your project requirements and our AI will generate custom
-              design samples. Choose your favorites and our expert developers
-              will bring them to life.
+              Share your business goals and our expert team will craft custom marketing strategies that drive results. From branding to digital campaigns, we deliver creative solutions that connect with your audience.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link
                 href="#lead-form"
                 className="inline-flex items-center px-8 py-4 text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 transition-all duration-300 text-lg font-medium shadow-md hover:shadow-lg hover:shadow-blue-500/20 group"
               >
-                Start Your Project
+                Start Your Campaign
                 <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </Link>
 
               <Link
-                href="#how-it-works"
+                href="#samples"
                 className="inline-flex items-center px-8 py-4 text-gray-700 bg-gray-100 dark:bg-gray-700 dark:text-gray-200 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 hover:scale-105 transition-all duration-300 text-lg font-medium shadow-sm hover:shadow-md"
               >
-                How It Works
+                View Portfolio
               </Link>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm text-gray-600 dark:text-gray-300">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-8 text-sm text-gray-600 dark:text-gray-300">
               <div className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 px-4 py-2 rounded-full backdrop-blur-sm">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>AI-Generated Designs</span>
+                <span>Strategic Planning</span>
               </div>
               <div className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 px-4 py-2 rounded-full backdrop-blur-sm">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>Expert Development</span>
+                <span>Creative Design</span>
               </div>
               <div className="flex items-center gap-2 bg-white/50 dark:bg-gray-800/50 px-4 py-2 rounded-full backdrop-blur-sm">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>100% Satisfaction Guarantee</span>
+                <span>Measurable Results</span>
               </div>
             </div>
           </div>
@@ -81,8 +79,8 @@ export default function BentoHeroLead() {
           >
             <div className="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl transform lg:translate-x-10 hover:scale-[1.02] transition-all duration-500">
               <Image
-                src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80"
-                alt="AI Design Generation"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                alt="Marketing Strategy Session"
                 fill
                 className="object-cover"
               />
@@ -94,15 +92,15 @@ export default function BentoHeroLead() {
                         <Sparkles className="w-4 h-4" />
                       </div>
                       <div className="text-white font-medium">
-                        AI Design Generator
+                        Campaign Strategy
                       </div>
                     </div>
                     <div className="flex gap-2">
                       <div className="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded-full">
-                        Multiple Styles
+                        Data-Driven
                       </div>
                       <div className="bg-blue-500/20 text-blue-300 text-xs px-2 py-1 rounded-full">
-                        Custom Designs
+                        ROI Focused
                       </div>
                     </div>
                   </div>
@@ -118,10 +116,10 @@ export default function BentoHeroLead() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold dark:text-white">
-                    100+ Designs
+                    200+ Campaigns
                   </div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">
-                    Generated Daily
+                    Delivered Annually
                   </div>
                 </div>
               </div>
@@ -134,10 +132,10 @@ export default function BentoHeroLead() {
                 </div>
                 <div>
                   <div className="text-sm font-semibold dark:text-white">
-                    Expert Developers
+                    Marketing Experts
                   </div>
                   <div className="text-xs text-gray-500 dark:text-gray-400">
-                    Bring Designs to Life
+                    Drive Your Success
                   </div>
                 </div>
               </div>

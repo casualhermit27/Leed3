@@ -10,35 +10,34 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "How does the 14-day free trial work?",
+    question: "How do your marketing services work?",
     answer:
-      "You can sign up for our 14-day free trial without providing any payment information. You'll get full access to all features during the trial period. At the end of the trial, you can choose to subscribe to one of our plans or your account will automatically switch to the free plan with limited features.",
+      "We begin with a comprehensive discovery session to understand your business goals, target audience, and current marketing challenges. Our team then develops a customized marketing strategy tailored to your specific needs. Once approved, we implement the strategy across relevant channels, continuously monitor performance, and optimize campaigns to maximize your ROI.",
   },
   {
-    question: "Can I change my plan later?",
+    question: "How long does it take to see results from marketing campaigns?",
     answer:
-      "Yes, you can upgrade or downgrade your plan at any time. If you upgrade, the new features will be available immediately. If you downgrade, the changes will take effect at the start of your next billing cycle.",
+      "Results vary based on your industry, competition, and chosen marketing channels. Typically, digital advertising campaigns can show initial results within 2-4 weeks, while SEO and content marketing efforts usually take 3-6 months to demonstrate significant impact. We provide regular performance reports so you can track progress throughout your campaign.",
   },
   {
-    question: "Is there a limit to how many team members I can add?",
+    question: "What's included in your marketing packages?",
     answer:
-      "The number of team members you can add depends on your plan. The Starter plan allows up to 5 team members, the Professional plan allows up to 20, and the Enterprise plan has no limit on team members.",
+      "Our marketing packages include strategy development, content creation, campaign execution, performance monitoring, and regular optimization. Depending on your selected package, services may include social media management, email marketing, SEO, paid advertising, content marketing, and more. Each package is designed to provide a comprehensive marketing solution tailored to your business size and goals.",
   },
   {
-    question:
-      "Do you offer discounts for non-profits or educational institutions?",
+    question: "Can I customize my marketing package?",
     answer:
-      "Yes, we offer special pricing for non-profit organizations, educational institutions, and open-source projects. Please contact our sales team for more information about our discount programs.",
+      "Absolutely! While we offer structured packages to meet common business needs, we understand that every business is unique. We can customize any package to focus on the channels and strategies that will best serve your specific goals. Contact us to discuss your requirements, and we'll create a tailored marketing solution for your business.",
   },
   {
-    question: "How secure is your platform?",
+    question: "Do you provide reporting and analytics?",
     answer:
-      "Security is our top priority. We use industry-standard encryption, regular security audits, and follow best practices for data protection. Our platform is SOC 2 compliant and we offer advanced security features like two-factor authentication, single sign-on, and role-based access controls.",
+      "Yes, transparency is core to our approach. All packages include regular performance reporting with clear metrics and insights. Our Growth Accelerator and Enterprise Suite packages include access to a real-time dashboard where you can monitor campaign performance at any time. We also schedule regular review meetings to discuss results and strategy adjustments.",
   },
   {
-    question: "What kind of support do you offer?",
+    question: "What if I want to change my marketing strategy mid-campaign?",
     answer:
-      "All plans include email support with varying response times based on your plan. The Professional plan includes priority email support, while the Enterprise plan offers 24/7 phone and email support along with a dedicated account manager.",
+      "We understand that business needs evolve. If you need to pivot your marketing strategy, we'll work with you to make necessary adjustments. Our team continuously analyzes campaign performance and market conditions, often recommending strategic shifts to improve results. We value flexibility and will adapt your campaigns to ensure they align with your current business objectives.",
   },
 ];
 
@@ -57,7 +56,7 @@ export default function FAQSectionClient() {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Find answers to common questions about our platform
+            Common questions about our marketing services
           </p>
         </div>
 
@@ -90,13 +89,13 @@ export default function FAQSectionClient() {
 
         <div className="text-center mt-12">
           <p className="text-gray-600 dark:text-gray-300 mb-4">
-            Still have questions?
+            Have more questions about our marketing services?
           </p>
           <a
-            href="#"
+            href="#lead-form"
             className="inline-flex items-center px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Contact Support
+            Schedule a Consultation
           </a>
         </div>
       </div>

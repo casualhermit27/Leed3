@@ -4,13 +4,13 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-type ProjectRequirement = {
+type MarketingService = {
   id: string;
   name: string;
   selected: boolean;
 };
 
-type ProjectType = {
+type MarketingGoal = {
   id: string;
   name: string;
   selected: boolean;
@@ -18,36 +18,36 @@ type ProjectType = {
 
 export default function LeadFormSection() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
     company: "",
-    companySize: "",
-    projectDescription: "",
+    industry: "",
     budget: "",
     timeline: "",
+    description: "",
+    services: [] as string[],
+    targetAudience: "",
+    currentChallenges: "",
   });
 
-  const [projectTypes, setProjectTypes] = useState<ProjectType[]>([
-    { id: "website", name: "Website", selected: false },
-    { id: "mobileApp", name: "Mobile App", selected: false },
-    { id: "dashboard", name: "Dashboard", selected: false },
-    { id: "ecommerce", name: "E-commerce", selected: false },
-    { id: "blog", name: "Blog", selected: false },
-    { id: "portfolio", name: "Portfolio", selected: false },
+  const [marketingServices, setMarketingServices] = useState<MarketingService[]>([
+    { id: "socialMedia", name: "Social Media Marketing", selected: false },
+    { id: "contentMarketing", name: "Content Marketing", selected: false },
+    { id: "emailCampaigns", name: "Email Campaigns", selected: false },
+    { id: "seo", name: "SEO & SEM", selected: false },
+    { id: "ppc", name: "PPC Advertising", selected: false },
+    { id: "analytics", name: "Marketing Analytics", selected: false },
   ]);
 
-  const [projectRequirements, setProjectRequirements] = useState<
-    ProjectRequirement[]
-  >([
-    { id: "responsive", name: "Responsive Design", selected: false },
-    { id: "userAuth", name: "User Authentication", selected: false },
-    { id: "payment", name: "Payment Integration", selected: false },
-    { id: "cms", name: "Content Management", selected: false },
-    { id: "analytics", name: "Analytics Dashboard", selected: false },
-    { id: "seo", name: "SEO Optimization", selected: false },
-    { id: "accessibility", name: "Accessibility Features", selected: false },
-    { id: "multilingual", name: "Multilingual Support", selected: false },
+  const [marketingGoals, setMarketingGoals] = useState<MarketingGoal[]>([
+    { id: "brandAwareness", name: "Increase Brand Awareness", selected: false },
+    { id: "leadGeneration", name: "Lead Generation", selected: false },
+    { id: "salesConversion", name: "Sales Conversion", selected: false },
+    { id: "customerRetention", name: "Customer Retention", selected: false },
+    { id: "marketExpansion", name: "Market Expansion", selected: false },
+    { id: "productLaunch", name: "Product Launch", selected: false },
+    { id: "competitiveEdge", name: "Competitive Edge", selected: false },
+    { id: "brandLoyalty", name: "Brand Loyalty", selected: false },
   ]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,18 +66,18 @@ export default function LeadFormSection() {
     }));
   };
 
-  const toggleProjectType = (id: string) => {
-    setProjectTypes(
-      projectTypes.map((type) =>
-        type.id === id ? { ...type, selected: !type.selected } : type,
+  const toggleMarketingService = (id: string) => {
+    setMarketingServices(
+      marketingServices.map((service) =>
+        service.id === id ? { ...service, selected: !service.selected } : service,
       ),
     );
   };
 
-  const toggleRequirement = (id: string) => {
-    setProjectRequirements(
-      projectRequirements.map((req) =>
-        req.id === id ? { ...req, selected: !req.selected } : req,
+  const toggleMarketingGoal = (id: string) => {
+    setMarketingGoals(
+      marketingGoals.map((goal) =>
+        goal.id === id ? { ...goal, selected: !goal.selected } : goal,
       ),
     );
   };
@@ -121,20 +121,19 @@ export default function LeadFormSection() {
               </div>
               <h2 className="text-3xl font-bold mb-4">Thank You!</h2>
               <p className="text-xl mb-8 text-blue-100">
-                Your project requirements have been submitted successfully. Our
-                team will generate custom design samples based on your
-                specifications.
+                Your marketing campaign request has been submitted successfully. Our
+                team will analyze your requirements and develop a tailored marketing strategy.
               </p>
               <p className="mb-8 text-blue-100">
-                You'll receive an email within 24 hours with a link to view and
-                select your AI-generated design samples.
+                You'll receive an email within 24 hours with a proposal and next steps for
+                your marketing campaign.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="#design-samples"
+                  href="#pricing"
                   className="inline-flex items-center px-8 py-4 text-blue-700 bg-white rounded-full hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 font-medium group"
                 >
-                  View Sample Designs
+                  View Marketing Packages
                   <ArrowUpRight className="ml-2 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </Link>
                 <Link
@@ -171,11 +170,11 @@ export default function LeadFormSection() {
           </div>
 
           <h2 className="text-3xl font-bold mb-6 text-center">
-            Tell Us About Your Project
+            Start Your Marketing Campaign
           </h2>
           <p className="text-blue-100 mb-8 text-center">
-            Share your requirements and we'll generate custom AI design samples
-            tailored to your needs
+            Share your marketing goals and requirements, and we'll create a customized
+            strategy to help you achieve measurable results
           </p>
 
           <div className="mb-8">
@@ -191,8 +190,8 @@ export default function LeadFormSection() {
                     {step === 1
                       ? "Basic Info"
                       : step === 2
-                        ? "Project Type"
-                        : "Requirements"}
+                        ? "Campaign Details"
+                        : "Marketing Goals"}
                   </span>
                 </div>
               ))}
@@ -212,36 +211,25 @@ export default function LeadFormSection() {
                   <div>
                     <input
                       type="text"
-                      name="firstName"
-                      value={formData.firstName}
+                      name="name"
+                      value={formData.name}
                       onChange={handleChange}
-                      placeholder="First Name"
+                      placeholder="Name"
                       className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm transition-all duration-300 focus:scale-105"
                       required
                     />
                   </div>
                   <div>
                     <input
-                      type="text"
-                      name="lastName"
-                      value={formData.lastName}
+                      type="email"
+                      name="email"
+                      value={formData.email}
                       onChange={handleChange}
-                      placeholder="Last Name"
+                      placeholder="Work Email"
                       className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm transition-all duration-300 focus:scale-105"
                       required
                     />
                   </div>
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Work Email"
-                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm transition-all duration-300 focus:scale-105"
-                    required
-                  />
                 </div>
                 <div>
                   <input
@@ -256,29 +244,32 @@ export default function LeadFormSection() {
                 </div>
                 <div>
                   <select
-                    name="companySize"
-                    value={formData.companySize}
+                    name="industry"
+                    value={formData.industry}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm transition-all duration-300 focus:scale-105"
+                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
                     required
                   >
                     <option value="" disabled className="text-gray-800">
-                      Company Size
+                      Select Industry
                     </option>
-                    <option value="1-10" className="text-gray-800">
-                      1-10 employees
+                    <option value="technology" className="text-gray-800">
+                      Technology
                     </option>
-                    <option value="11-50" className="text-gray-800">
-                      11-50 employees
+                    <option value="healthcare" className="text-gray-800">
+                      Healthcare
                     </option>
-                    <option value="51-200" className="text-gray-800">
-                      51-200 employees
+                    <option value="finance" className="text-gray-800">
+                      Finance
                     </option>
-                    <option value="201-500" className="text-gray-800">
-                      201-500 employees
+                    <option value="retail" className="text-gray-800">
+                      Retail
                     </option>
-                    <option value="501+" className="text-gray-800">
-                      501+ employees
+                    <option value="education" className="text-gray-800">
+                      Education
+                    </option>
+                    <option value="other" className="text-gray-800">
+                      Other
                     </option>
                   </select>
                 </div>
@@ -288,63 +279,29 @@ export default function LeadFormSection() {
             {currentStep === 2 && (
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-medium mb-4">
-                    What type of project are you looking to build?
-                  </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {projectTypes.map((type) => (
-                      <div
-                        key={type.id}
-                        onClick={() => toggleProjectType(type.id)}
-                        className={`p-4 rounded-xl cursor-pointer transition-all duration-300 ${type.selected ? "bg-white/30 border-white" : "bg-white/10 border-transparent"} border hover:bg-white/20`}
-                      >
-                        <div className="flex items-center">
-                          <div
-                            className={`w-5 h-5 rounded-full border-2 mr-3 flex items-center justify-center ${type.selected ? "border-white bg-white" : "border-white/50"}`}
-                          >
-                            {type.selected && (
-                              <div className="w-2 h-2 rounded-full bg-blue-600"></div>
-                            )}
-                          </div>
-                          <span>{type.name}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-lg font-medium mb-4">Project Budget</h3>
-                  <select
-                    name="budget"
-                    value={formData.budget}
+                  <h3 className="text-lg font-medium mb-4">Target Audience</h3>
+                  <textarea
+                    name="targetAudience"
+                    value={formData.targetAudience}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
-                    required
-                  >
-                    <option value="" disabled className="text-gray-800">
-                      Select Budget Range
-                    </option>
-                    <option value="<5k" className="text-gray-800">
-                      Less than $5,000
-                    </option>
-                    <option value="5k-10k" className="text-gray-800">
-                      $5,000 - $10,000
-                    </option>
-                    <option value="10k-25k" className="text-gray-800">
-                      $10,000 - $25,000
-                    </option>
-                    <option value="25k-50k" className="text-gray-800">
-                      $25,000 - $50,000
-                    </option>
-                    <option value="50k+" className="text-gray-800">
-                      $50,000+
-                    </option>
-                  </select>
+                    placeholder="Describe your target audience, demographics, and customer personas..."
+                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm h-32"
+                  />
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-medium mb-4">Project Timeline</h3>
+                  <h3 className="text-lg font-medium mb-4">Current Marketing Challenges</h3>
+                  <textarea
+                    name="currentChallenges"
+                    value={formData.currentChallenges}
+                    onChange={handleChange}
+                    placeholder="What marketing challenges are you currently facing? What hasn't worked in the past?"
+                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm h-32"
+                  />
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-medium mb-4">Campaign Timeline</h3>
                   <select
                     name="timeline"
                     value={formData.timeline}
@@ -355,19 +312,58 @@ export default function LeadFormSection() {
                     <option value="" disabled className="text-gray-800">
                       Select Timeline
                     </option>
-                    <option value="<1month" className="text-gray-800">
-                      Less than 1 month
+                    <option value="immediate" className="text-gray-800">
+                      Immediate (1-2 weeks)
                     </option>
-                    <option value="1-3months" className="text-gray-800">
-                      1-3 months
+                    <option value="short" className="text-gray-800">
+                      Short-term (1-3 months)
                     </option>
-                    <option value="3-6months" className="text-gray-800">
-                      3-6 months
+                    <option value="medium" className="text-gray-800">
+                      Medium-term (3-6 months)
                     </option>
-                    <option value="6months+" className="text-gray-800">
-                      6+ months
+                    <option value="long" className="text-gray-800">
+                      Long-term (6+ months)
                     </option>
                   </select>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-medium mb-4">Monthly Marketing Budget</h3>
+                  <select
+                    name="budget"
+                    value={formData.budget}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
+                    required
+                  >
+                    <option value="" disabled className="text-gray-800">
+                      Select Budget Range
+                    </option>
+                    <option value="<2k" className="text-gray-800">
+                      Less than $2,000/month
+                    </option>
+                    <option value="2k-5k" className="text-gray-800">
+                      $2,000 - $5,000/month
+                    </option>
+                    <option value="5k-10k" className="text-gray-800">
+                      $5,000 - $10,000/month
+                    </option>
+                    <option value="10k+" className="text-gray-800">
+                      $10,000+/month
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-medium mb-4">Campaign Description</h3>
+                  <textarea
+                    name="description"
+                    value={formData.description}
+                    onChange={handleChange}
+                    placeholder="Describe your marketing campaign goals, key messages, and any specific requirements..."
+                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm h-32"
+                    required
+                  />
                 </div>
               </div>
             )}
@@ -376,23 +372,23 @@ export default function LeadFormSection() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-medium mb-4">
-                    Select Project Requirements
+                    Select Marketing Services
                   </h3>
                   <div className="grid grid-cols-2 gap-3">
-                    {projectRequirements.map((req) => (
+                    {marketingServices.map((service) => (
                       <div
-                        key={req.id}
-                        onClick={() => toggleRequirement(req.id)}
-                        className={`p-4 rounded-xl cursor-pointer transition-all duration-300 ${req.selected ? "bg-white/30 border-white" : "bg-white/10 border-transparent"} border hover:bg-white/20 flex items-center`}
+                        key={service.id}
+                        onClick={() => toggleMarketingService(service.id)}
+                        className={`p-4 rounded-xl cursor-pointer transition-all duration-300 ${service.selected ? "bg-white/30 border-white" : "bg-white/10 border-transparent"} border hover:bg-white/20 flex items-center`}
                       >
                         <div
-                          className={`w-5 h-5 rounded-md border-2 mr-3 flex items-center justify-center ${req.selected ? "border-white bg-white" : "border-white/50"}`}
+                          className={`w-5 h-5 rounded-md border-2 mr-3 flex items-center justify-center ${service.selected ? "border-white bg-white" : "border-white/50"}`}
                         >
-                          {req.selected && (
+                          {service.selected && (
                             <div className="w-3 h-3 rounded-sm bg-blue-600"></div>
                           )}
                         </div>
-                        <span>{req.name}</span>
+                        <span>{service.name}</span>
                       </div>
                     ))}
                   </div>
@@ -400,17 +396,26 @@ export default function LeadFormSection() {
 
                 <div>
                   <h3 className="text-lg font-medium mb-4">
-                    Project Description
+                    Select Marketing Goals
                   </h3>
-                  <textarea
-                    name="projectDescription"
-                    value={formData.projectDescription}
-                    onChange={handleChange}
-                    placeholder="Describe your project in detail..."
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-white/30 bg-white/10 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50 backdrop-blur-sm"
-                    required
-                  ></textarea>
+                  <div className="grid grid-cols-2 gap-3">
+                    {marketingGoals.map((goal) => (
+                      <div
+                        key={goal.id}
+                        onClick={() => toggleMarketingGoal(goal.id)}
+                        className={`p-4 rounded-xl cursor-pointer transition-all duration-300 ${goal.selected ? "bg-white/30 border-white" : "bg-white/10 border-transparent"} border hover:bg-white/20 flex items-center`}
+                      >
+                        <div
+                          className={`w-5 h-5 rounded-md border-2 mr-3 flex items-center justify-center ${goal.selected ? "border-white bg-white" : "border-white/50"}`}
+                        >
+                          {goal.selected && (
+                            <div className="w-3 h-3 rounded-sm bg-blue-600"></div>
+                          )}
+                        </div>
+                        <span>{goal.name}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}

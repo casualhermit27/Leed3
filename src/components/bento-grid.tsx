@@ -17,11 +17,10 @@ export default function BentoGrid() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 dark:text-white">
-            Powerful Features
+            Our Marketing Services
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Everything you need to scale your business and delight your
-            customers
+            Comprehensive marketing solutions to elevate your brand and drive business growth
           </p>
         </div>
 
@@ -34,11 +33,10 @@ export default function BentoGrid() {
                 <Rocket className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold mb-2">
-                Enterprise-Ready Platform
+                Integrated Marketing Campaigns
               </h3>
               <p className="text-blue-100 mb-6">
-                Scale your business with our secure, reliable, and powerful SaaS
-                solution built for modern teams.
+                Cohesive multi-channel marketing strategies that amplify your brand message and drive measurable results across all platforms.
               </p>
               <Link
                 href="#"
@@ -69,24 +67,23 @@ export default function BentoGrid() {
               <BarChart3 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 className="text-lg font-semibold mb-2 dark:text-white">
-              Advanced Analytics
+              Marketing Analytics
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Gain insights with powerful reporting and data visualization
-              tools.
+              Data-driven insights to optimize your campaigns and maximize ROI.
             </p>
           </div>
 
-          {/* Security Card */}
+          {/* Brand Strategy Card */}
           <div className="group rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 flex flex-col hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700">
             <div className="bg-green-100 dark:bg-green-900/30 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
               <Shield className="w-5 h-5 text-green-600 dark:text-green-400" />
             </div>
             <h3 className="text-lg font-semibold mb-2 dark:text-white">
-              Enterprise Security
+              Brand Strategy
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Bank-grade encryption and advanced security protocols built-in.
+              Develop a distinctive brand identity that resonates with your target audience.
             </p>
           </div>
 
@@ -105,9 +102,7 @@ export default function BentoGrid() {
               ))}
             </div>
             <p className="text-gray-700 dark:text-gray-300 mb-6 italic text-sm">
-              "This platform has completely transformed how our team
-              collaborates and delivers projects. We've seen a 40% increase in
-              productivity since implementing this solution."
+              "Their marketing team completely transformed our brand presence. Our social media engagement increased by 215% and we saw a 40% boost in qualified leads within just three months."
             </p>
             <div className="flex items-center mt-auto">
               <div className="w-10 h-10 rounded-full bg-purple-200 dark:bg-purple-800 overflow-hidden mr-3 flex items-center justify-center">
@@ -118,7 +113,7 @@ export default function BentoGrid() {
               <div>
                 <h4 className="font-semibold dark:text-white">Sarah Johnson</h4>
                 <p className="text-xs text-gray-600 dark:text-gray-400">
-                  CTO, TechCorp
+                  CMO, GrowthBrand
                 </p>
               </div>
             </div>
@@ -127,71 +122,70 @@ export default function BentoGrid() {
           {/* Image Card */}
           <div className="md:row-span-2 group rounded-3xl overflow-hidden relative hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700">
             <Image
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80"
-              alt="Team collaboration"
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
+              alt="Marketing strategy session"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
               <h3 className="text-white text-lg font-semibold mb-2">
-                Team Collaboration
+                Strategic Planning
               </h3>
               <p className="text-white/80 text-sm">
-                Seamless workflow for your entire team with real-time updates.
+                Custom marketing strategies aligned with your business objectives.
               </p>
             </div>
           </div>
 
-          {/* Speed Card */}
+          {/* Digital Marketing Card */}
           <div className="group rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 flex flex-col hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700">
             <div className="bg-yellow-100 dark:bg-yellow-900/30 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
               <Zap className="w-5 h-5 text-yellow-600 dark:text-yellow-400" />
             </div>
             <h3 className="text-lg font-semibold mb-2 dark:text-white">
-              Lightning Fast
+              Digital Marketing
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              10x faster than traditional solutions with optimized performance.
+              SEO, PPC, and social media campaigns that drive traffic and conversions.
             </p>
           </div>
 
-          {/* Scalability Card */}
+          {/* Content Marketing Card */}
           <div className="group rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 flex flex-col hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700">
             <div className="bg-red-100 dark:bg-red-900/30 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
               <Layers className="w-5 h-5 text-red-600 dark:text-red-400" />
             </div>
             <h3 className="text-lg font-semibold mb-2 dark:text-white">
-              Scalable Infrastructure
+              Content Marketing
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Grows with your business needs without performance degradation.
+              Engaging content that tells your brand story and builds customer loyalty.
             </p>
           </div>
 
-          {/* Uptime Card */}
+          {/* Performance Marketing Card */}
           <div className="group rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 flex flex-col hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700">
             <div className="bg-teal-100 dark:bg-teal-900/30 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
               <CheckCircle2 className="w-5 h-5 text-teal-600 dark:text-teal-400" />
             </div>
             <h3 className="text-lg font-semibold mb-2 dark:text-white">
-              99.9% Uptime
+              Performance Marketing
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Reliability you can count on with our enterprise-grade
-              infrastructure.
+              Results-focused campaigns with clear KPIs and conversion tracking.
             </p>
           </div>
 
-          {/* Collaboration Card */}
+          {/* Marketing Automation Card */}
           <div className="group rounded-3xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 flex flex-col hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 dark:border-gray-700">
             <div className="bg-indigo-100 dark:bg-indigo-900/30 w-10 h-10 rounded-xl flex items-center justify-center mb-4">
               <Users className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             </div>
             <h3 className="text-lg font-semibold mb-2 dark:text-white">
-              Team Collaboration
+              Marketing Automation
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-sm">
-              Work together seamlessly with intuitive collaboration tools.
+              Streamline your marketing workflows and nurture leads efficiently.
             </p>
           </div>
         </div>
@@ -201,7 +195,7 @@ export default function BentoGrid() {
             href="#"
             className="inline-flex items-center px-6 py-3 text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg hover:shadow-blue-500/20 hover:scale-105 transition-all duration-300"
           >
-            Explore All Features
+            View All Services
             <ArrowUpRight className="ml-2 w-4 h-4" />
           </Link>
         </div>

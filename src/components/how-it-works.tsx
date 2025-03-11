@@ -4,44 +4,44 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: "Submit Your Requirements",
+      title: "Discovery & Strategy",
       description:
-        "Fill out our detailed project form with your specific needs, goals, and preferences.",
+        "We analyze your business goals, target audience, and competitive landscape to develop a tailored marketing strategy.",
       color: "blue",
     },
     {
       number: "02",
-      title: "AI Generates Design Samples",
+      title: "Creative Concept Development",
       description:
-        "Our AI system creates multiple custom design concepts based on your requirements.",
+        "Our creative team crafts compelling campaign concepts that align with your brand identity and marketing objectives.",
       color: "purple",
     },
     {
       number: "03",
-      title: "Select Your Favorites",
+      title: "Design & Content Creation",
       description:
-        "Browse through the generated designs and choose the ones that best match your vision.",
+        "We produce high-quality designs and engaging content tailored to each marketing channel and audience segment.",
       color: "indigo",
     },
     {
       number: "04",
-      title: "Development Begins",
+      title: "Campaign Execution",
       description:
-        "Our expert development team brings your selected designs to life with clean, efficient code.",
+        "Our marketing specialists deploy your campaigns across appropriate channels, optimizing for maximum impact.",
       color: "green",
     },
     {
       number: "05",
-      title: "Review & Refine",
+      title: "Performance Monitoring",
       description:
-        "Provide feedback on the implementation and we'll make adjustments until it's perfect.",
+        "We track key metrics in real-time, making data-driven adjustments to improve campaign performance.",
       color: "yellow",
     },
     {
       number: "06",
-      title: "Launch Your Project",
+      title: "Analysis & Optimization",
       description:
-        "Once approved, we deploy your project and provide ongoing support to ensure success.",
+        "Detailed reporting and insights help refine your marketing strategy for continuous improvement and ROI.",
       color: "red",
     },
   ];
@@ -51,11 +51,11 @@ export default function HowItWorks() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold mb-4 dark:text-white">
-            How It Works
+            Our Marketing Process
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Our streamlined process takes you from concept to completed project
-            with AI-powered efficiency
+            Our strategic approach transforms your business objectives into 
+            successful marketing campaigns that deliver measurable results
           </p>
         </div>
 
